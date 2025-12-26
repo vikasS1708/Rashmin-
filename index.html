@@ -15,10 +15,21 @@
     <h2>Uff Panda… listen slowly</h2>
 
     <div class="msg">
-        Don’t leave…  
-        Please stay with me 🤍  
-        I don’t need perfection,  
-        I just need **you**.
+        Don’t leave…<br>
+        Please stay with me 🤍<br>
+        I don’t need perfection,<br>
+        I just need <b>you</b>.
+    </div>
+
+    <!-- TIMER SECTION -->
+    <div class="timer">
+        💖 We met on <b>29 July 2025</b><br><br>
+        ⏳ Time together:<br>
+        <b><span id="days"></span></b> days,
+        <b><span id="hours"></span></b> hrs,
+        <b><span id="minutes"></span></b> mins,
+        <b><span id="seconds"></span></b> secs<br><br>
+        📅 Today is <b><span id="today"></span></b>
     </div>
 
     <ul class="points">
@@ -31,7 +42,7 @@
     </ul>
 
     <div class="final">
-        Stay with me…  
+        Stay with me…<br>
         I choose you, every day 💖
     </div>
 </div>
@@ -42,6 +53,32 @@
 <div class="heart" style="left:50%; animation-delay:4s;"></div>
 <div class="heart" style="left:70%; animation-delay:1s;"></div>
 <div class="heart" style="left:90%; animation-delay:3s;"></div>
+
+<!-- TIMER SCRIPT -->
+<script>
+const startDate = new Date("2025-07-29T00:00:00");
+
+function updateTimer() {
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    document.getElementById("today").innerText = dayNames[now.getDay()];
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
 
 </body>
 </html>
