@@ -7,7 +7,7 @@
 
     body {
         height: 100vh;
-        background: linear-gradient(135deg, #D8BFD8, #87CEEB);
+        background: linear-gradient(135deg, #ffafbd, #ffc3a0);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -23,16 +23,17 @@
         width: 90%;
         max-width: 450px;
         animation: fadeIn 2s ease;
+        z-index: 2;
     }
 
     h1 {
         font-size: 2.2em;
-        color: #b30036;
+        color: #b30059;
         animation: heartbeat 2s infinite;
     }
 
     h2 {
-        color: #107688;
+        color: #800040;
         margin: 15px 0;
         font-weight: normal;
     }
@@ -43,6 +44,17 @@
         color: #4d0026;
         line-height: 1.6;
         animation: slideUp 2s ease;
+    }
+
+    /* TIMER BOX */
+    .timer {
+        margin-top: 22px;
+        padding: 15px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 15px;
+        color: #660033;
+        font-size: 0.95em;
+        animation: fadeIn 3s ease;
     }
 
     .points {
@@ -59,7 +71,7 @@
     .final {
         margin-top: 25px;
         font-size: 1.2em;
-        color: #b80691;
+        color: #99004d;
         font-weight: bold;
         animation: glow 2s infinite alternate;
     }
@@ -72,6 +84,7 @@
         background: red;
         transform: rotate(45deg);
         animation: float 6s infinite;
+        z-index: 1;
     }
 
     .heart::before,
@@ -95,14 +108,8 @@
     }
 
     @keyframes float {
-        0% {
-            transform: translateY(0) rotate(45deg);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-600px) rotate(45deg);
-            opacity: 0;
-        }
+        0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+        100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
     }
 
     @keyframes fadeIn {
