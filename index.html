@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="rstyle.css">
 <title>For Rashmi 🐼</title>
-
-
 </head>
 
 <body>
@@ -23,13 +21,20 @@
 
     <!-- TIMER SECTION -->
     <div class="timer">
-        💖 We met on <b>29 July 2025</b><br><br>
-        ⏳ Time together:<br>
+        💖 The day our story quietly began — <br><b>29 July 2025</b><br><br>
+
+        🌸 The day you softly chose me — <br>
+        <b>Wednesday, 3 September 2025</b><br><br>
+
+        ⏳ Time since we met:<br>
+
         <b><span id="days"></span></b> days,
         <b><span id="hours"></span></b> hrs,
         <b><span id="minutes"></span></b> mins,
         <b><span id="seconds"></span></b> secs<br><br>
-        📅 Today is <b><span id="today"></span></b>
+
+        📅 Today feels special because it still has <b>us</b> —
+        <b><span id="today"></span></b>
     </div>
 
     <ul class="points">
@@ -56,9 +61,11 @@
 
 <!-- TIMER SCRIPT -->
 <script>
+
 const startDate = new Date("2025-07-29T00:00:00");
 
 function updateTimer() {
+
     const now = new Date();
     const diff = now - startDate;
 
@@ -72,12 +79,18 @@ function updateTimer() {
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
 
-    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    document.getElementById("today").innerText = dayNames[now.getDay()];
+    const dayNames = [
+        "Sunday","Monday","Tuesday",
+        "Wednesday","Thursday","Friday","Saturday"
+    ];
+
+    document.getElementById("today").innerText =
+        dayNames[now.getDay()];
 }
 
 setInterval(updateTimer, 1000);
 updateTimer();
+
 </script>
 
 </body>
